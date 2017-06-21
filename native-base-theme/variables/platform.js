@@ -34,7 +34,7 @@ export default {
   CheckboxIconSize: platform === "ios" ? 21 : 14,
   CheckboxIconMarginTop: platform === "ios" ? undefined : 1,
   CheckboxFontSize: platform === "ios" ? 23 / 0.9 : 18,
-  DefaultFontSize: 15.5,
+  DefaultFontSize: 17,
   checkboxBgColor: "#039BE5",
   checkboxSize: 20,
   checkboxTickColor: "#fff",
@@ -117,7 +117,7 @@ export default {
 
   // Font
   fontFamily: platform === "ios" ? "System" : "Roboto",
-  fontSizeBase: 12.5,
+  fontSizeBase: 15,
 
   get fontSizeH1() {
     return this.fontSizeBase * 1.8;
@@ -172,7 +172,7 @@ export default {
   iconHeaderSize: platform === "ios" ? 33 : 24,
 
   // InputGroup
-  inputFontSize: 15.5,
+  inputFontSize: 17,
   inputBorderColor: "#D9D5DC",
   inputSuccessBorderColor: "#2b8339",
   inputErrorBorderColor: "#ed2f2f",
@@ -203,7 +203,7 @@ export default {
   // List
   listBorderColor: "#c9c9c9",
   listDividerBg: "#f4f4f4",
-  listItemHeight: 50,
+  listItemHeight: 45,
   listBtnUnderlayColor: "#DDD",
 
   // Card
@@ -238,13 +238,13 @@ export default {
 
   // Tabs
   tabBgColor: "#F8F8F8",
-  tabFontSize: 14.5,
+  tabFontSize: 15,
   tabTextColor: "#222222",
 
   // Text
   textColor: "#000",
   inverseTextColor: "#fff",
-  noteFontSize: 13.5,
+  noteFontSize: 14,
 
   // Title
   titleFontfamily: platform === "ios" ? "System" : "Roboto_medium",
