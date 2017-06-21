@@ -22,6 +22,9 @@ export default {
   menuIcon: {
     width: 23
   },
+  menuItem: {
+    height: 50
+  },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',

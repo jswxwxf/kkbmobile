@@ -64,7 +64,6 @@ export default class Profile extends Component {
       <Container>
         <Content style={styles.container}>
           <List style={styles.list}>
-            <Divider bottomBorder />
             <AvatarItem />
             <Divider />
             <ProfileItem itemText="用户名" itemValue="Nicholas" />

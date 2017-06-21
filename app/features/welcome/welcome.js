@@ -65,6 +65,7 @@ const Welcome = ({ navigation }) => (
           <Text style={styles.actionText}>活动专区</Text>
         </Col>
       </Grid>
+      
       <List style={styles.insuranceContainer}>
         <ListItem thumbnail first>
           <Left>
@@ -102,19 +103,6 @@ const Welcome = ({ navigation }) => (
           <Right />
         </ListItem>
       </List>
-      {/*<Card>
-        <CardItem>
-          <Body>
-            <Text>Chat App to talk some awesome people!</Text>
-          </Body>
-        </CardItem>
-      </Card>
-      <Button full rounded dark style={styles.button} onPress={() => navigation.navigate("Chat")}>
-        <Text>Chat With People</Text>
-      </Button>
-      <Button full rounded primary style={styles.button} onPress={() => navigation.navigate("Profile")}>
-        <Text>Goto Profiles</Text>
-      </Button>*/}
     </Content>
   </Container >
 );

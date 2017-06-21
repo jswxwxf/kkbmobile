@@ -77,7 +77,7 @@ export default class Menu extends Component {
 
   renderMenuItem(toScreen, menuText, iconSource) {
     return (
-      <ListItem icon last onPress={() => this.handleNavigation(toScreen)}>
+      <ListItem style={styles.menuItem} icon last onPress={() => this.handleNavigation(toScreen)}>
         <Left>
           <Thumbnail resizeMode="contain" square style={styles.menuIcon}
             source={iconSource} />
