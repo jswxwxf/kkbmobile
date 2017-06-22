@@ -32,7 +32,8 @@ export const globalStyles = {
     $hint: Color(DARK).lighten(0.4),
     $border: BORDER,
     $background: BACKGROUND,
-    $placeholder: '#808080'
+    $placeholder: '#808080',
+    $backdrop: 'rgba(0,0,0,0.2)'
   },
   positive: {
     color: POSITIVE

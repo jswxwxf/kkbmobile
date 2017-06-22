@@ -5,6 +5,7 @@ import { Toast } from 'teaset';
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import Config from 'kkbmobile/app/config/config';
 
+import { appActions } from 'kkbmobile/app/shared/actions';
 import { AppStore } from 'kkbmobile/app/shared/stores';
 
 export default class UtilService {
@@ -24,6 +25,14 @@ export default class UtilService {
     // clearTimeout(this.spinnerTimer);
     AppStore.appState.loading = false;
     AppStore.appState.loadingText = null;
+  }
+
+  showBackdrop() {
+    AppStore.appState.backdropVisible = true;
+  }
+
+  hideBackdrop() {
+    AppStore.appState.backdropVisible = false;
   }
 
   /**

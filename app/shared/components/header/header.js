@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import {
   Header as BaseHeader,
   Left,
@@ -9,7 +10,7 @@ import {
   Icon
 } from 'native-base';
 
-import styles from './header-styles';
+import styles from './styles';
 
 const Header = ({ navigation, title }) => (
   <BaseHeader>

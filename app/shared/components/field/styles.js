@@ -23,5 +23,11 @@ export default {
     width: 15,
     tintColor: '#777',
     marginLeft: 5
+  },
+  pickerItem: {
+    flexDirection: 'row',
+    width: 200,
+    alignItems: 'center',
+    justifyContent: 'flex-end'
   }
 };

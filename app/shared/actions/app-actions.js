@@ -4,5 +4,5 @@ export default Reflux.createActions([
   'networkError',
   'tokenExpired',
   'resultSucceed',
-  'resultFailed'
+  'resultFailed',
 ]);

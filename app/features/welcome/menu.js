@@ -21,7 +21,7 @@ import {
 import Spinner from 'react-native-loading-spinner-overlay';
 import { observer } from 'mobx-react';
 
-import { Divider } from 'kkbmobile/app/shared/components';
+import { Divider, Backdrop } from 'kkbmobile/app/shared/components';
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import { userActions } from 'kkbmobile/app/shared/actions';
 import { UserStore, AppStore } from 'kkbmobile/app/shared/stores';
@@ -109,7 +109,8 @@ export default class Menu extends Component {
             {this.renderMenuItem('About', '关于开开保', require(`kkbmobile/app/assets/images/menu_about.png`))}
           </List>
         </Content>
-        <Spinner visible={AppStore.appState.loading} textContent={AppStore.appState.loadingText} overlayColor="rgba(0, 0, 0, 0.2)" textStyle={styles.spinnerText} />
+        <Spinner visible={AppStore.appState.loading} textContent={AppStore.appState.loadingText} overlayColor={styles.colors.$backdrop} textStyle={styles.spinnerText} />
+        <Backdrop />
       </Container>
     );
   }
