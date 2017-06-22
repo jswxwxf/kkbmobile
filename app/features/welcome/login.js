@@ -20,7 +20,8 @@ import { observer } from 'mobx-react';
 import {
   Header,
   InputItem,
-  NavLink
+  NavLink,
+  Divider
 } from 'kkbmobile/app/shared/components';
 import { UserStore } from 'kkbmobile/app/shared/stores';
 
@@ -39,8 +40,9 @@ export default class Login extends Component {
     return (
       <Container>
         <Header navigation={navigation} title="登录" />
-        <Content style={styles.whiteBg}>
+        <Content style={styles.background}>
           <Form>
+            <Divider bottomBorder />
             <InputItem label="手机" placeholder="请输入用户名或注册手机" state={this.form.name} />
             <InputItem label="密码" placeholder="请设置密码" last secureTextEntry state={this.form.password} />
             <View style={styles.linkContainer}>

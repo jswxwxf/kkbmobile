@@ -49,10 +49,10 @@ export default class Detail extends Component {
 
   renderTab(title, iconSource) {
     return (
-      <TabHeading style={styles.tabWrapper}>
+      <View style={styles.tabWrapper}>
         {Platform.OS == 'ios' && <Thumbnail resizeMode="contain" style={styles.tabIcon} source={iconSource} />}
         <Text style={styles.tabText}>{title}</Text>
-      </TabHeading>
+      </View>
     )
   }
 

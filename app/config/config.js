@@ -7,7 +7,7 @@ export default class Config {
   static isPhantomAction = (action) => {
     return _.includes([
       'DrawerOpen', 'DrawerClose',
-      'Welcome', 'Login', 'Register', 'Forget'
+      'Welcome', 'Login', 'Register', 'ForgetPassword'
     ], action.routeName);
   }
 

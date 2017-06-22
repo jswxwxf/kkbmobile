@@ -19,6 +19,7 @@ import {
   Thumbnail
 } from 'native-base';
 
+import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import { Header, Divider } from 'kkbmobile/app/shared/components';
 import { userActions } from 'kkbmobile/app/shared/actions';
 import { UserStore } from 'kkbmobile/app/shared/stores';
@@ -26,6 +27,8 @@ import { UserStore } from 'kkbmobile/app/shared/stores';
 import styles from './home-styles';
 
 export default class Home extends Component {
+
+  utilService = inject(TYPES.utilService);
 
   static navigationOptions = ({ navigation }) => ({
     title: '用户中心',
@@ -53,7 +56,7 @@ export default class Home extends Component {
   renderListItem(toScreen, itemText, iconSource) {
     const { navigation } = this.props;
     return (
-      <ListItem icon last onPress={() => navigation.navigate(toScreen)}>
+      <ListItem icon last onPress={() => this.utilService.nav(toScreen, navigation)}>
         <Left>
           <Thumbnail resizeMode="contain" square style={styles.itemIcon}
             source={iconSource} />

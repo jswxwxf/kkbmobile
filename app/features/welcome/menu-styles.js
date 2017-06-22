@@ -54,6 +54,7 @@ export default {
   },
   name: {
     marginLeft: 15,
+    backgroundColor: 'transparent',
     color: globalStyles.colors.$stable
   },
   spinnerText: {

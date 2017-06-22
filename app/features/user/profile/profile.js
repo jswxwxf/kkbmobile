@@ -16,6 +16,7 @@ import {
   Thumbnail
 } from 'native-base';
 
+import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import { Header, Divider } from 'kkbmobile/app/shared/components';
 
 import styles from './profile-styles';
@@ -23,7 +24,7 @@ import styles from './profile-styles';
 const ProfileItem = ({ navigation, itemText, itemValue, readonly, onPress, iconSource, last }) => {
   const style = readonly ? { color: 'transparent' } : null;
   return (
-    <ListItem icon last={last} onPress={onPress}>
+    <ListItem button icon last={last} onPress={onPress}>
       {iconSource && <Left>
         <Thumbnail resizeMode="contain" style={styles.icon} source={iconSource} />
       </Left>}
@@ -54,6 +55,8 @@ const AvatarItem = () => {
 
 export default class Profile extends Component {
 
+  utilService = inject(TYPES.utilService);
+
   static navigationOptions = ({ navigation }) => ({
     title: '帐户信息'
   });
@@ -64,6 +67,7 @@ export default class Profile extends Component {
       <Container>
         <Content style={styles.container}>
           <List style={styles.list}>
+            <Divider bottomBorder />
             <AvatarItem />
             <Divider />
             <ProfileItem itemText="用户名" itemValue="Nicholas" />
@@ -73,7 +77,7 @@ export default class Profile extends Component {
             </Separator>
             <ProfileItem itemText="身份证" itemValue="320212197907230510" />
             <ProfileItem itemText="姓名" itemValue="尼古拉斯" />
-            <ProfileItem itemText="补充信息" itemValue="点击补充信息" last onPress={() => navigation.navigate('Detail')} />
+            <ProfileItem itemText="补充信息" itemValue="点击补充信息" last onPress={() => this.utilService.nav('Detail', navigation)} />
             <Separator bordered>
               <Text>绑定设置</Text>
             </Separator>

@@ -21,6 +21,7 @@ import {
 import Spinner from 'react-native-loading-spinner-overlay';
 import { observer } from 'mobx-react';
 
+import { Divider } from 'kkbmobile/app/shared/components';
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import { userActions } from 'kkbmobile/app/shared/actions';
 import { UserStore, AppStore } from 'kkbmobile/app/shared/stores';
@@ -72,12 +73,12 @@ export default class Menu extends Component {
   handleNavigation = (toScreen) => {
     const { activeItemKey, state, navigation } = this.props;
     if (activeItemKey == toScreen) return navigation.navigate("DrawerClose");
-    navigation.navigate(toScreen);
+    this.utilService.nav(toScreen, navigation);
   };
 
   renderMenuItem(toScreen, menuText, iconSource) {
     return (
-      <ListItem style={styles.menuItem} icon last onPress={() => this.handleNavigation(toScreen)}>
+      <ListItem button style={styles.menuItem} icon last onPress={() => this.handleNavigation(toScreen)}>
         <Left>
           <Thumbnail resizeMode="contain" square style={styles.menuIcon}
             source={iconSource} />
@@ -93,11 +94,12 @@ export default class Menu extends Component {
     const { navigation } = this.props;
     return (
       <Container style={styles.container}>
-        <Content>
+        <Content style={styles.background}>
           <Image resizeMode="stretch" style={styles.headerBg} source={require('kkbmobile/app/assets/images/menubg.png')}>
             {this.renderHeader()}
           </Image>
-          <List>
+          <Divider />
+          <List style={styles.whiteBg}>
             {this.renderMenuItem('Welcome', '首页', require(`kkbmobile/app/assets/images/menu_home.png`))}
             {this.renderMenuItem('InsuranceHome', '产品中心', require(`kkbmobile/app/assets/images/menu_product.png`))}
             {this.renderMenuItem('TravelHome', '驾驶评分', require(`kkbmobile/app/assets/images/menu_travel.png`))}

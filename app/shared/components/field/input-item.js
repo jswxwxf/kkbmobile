@@ -16,7 +16,7 @@ export default class InputItem extends Component {
   render() {
     const { label, labelStyle, placeholder, state = {}, last, right, ...other } = this.props;
     return (
-      <View>
+      <View style={styles.inputContainer}>
         <Item fixedLabel last={last} error={state.hasError}>
           <Label style={labelStyle}>{label}</Label>
           <Input placeholder={placeholder} value={state.value} onChangeText={state.onChange} autoCapitalize="none" {...other} />

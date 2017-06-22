@@ -23,7 +23,8 @@ import {
   Header,
   InputItem,
   Hint,
-  CountDown
+  CountDown,
+  Divider
 } from 'kkbmobile/app/shared/components';
 import { UserStore } from 'kkbmobile/app/shared/stores';
 
@@ -42,8 +43,9 @@ export default class Forget extends Component {
     return (
       <Container>
         <Header navigation={navigation} title="重置密码" />
-        <Content style={styles.whiteBg}>
+        <Content style={styles.background}>
           <Form>
+            <Divider bottomBorder />
             <InputItem label="手机号" placeholder="请输入注册手机" state={this.form.mobile} labelStyle={styles.label} />
             <InputItem label="验证码" placeholder="请输入验证码" state={this.form.code} labelStyle={styles.label}
               right={

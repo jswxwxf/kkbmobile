@@ -1,6 +1,6 @@
-import { Alert } from "react-native";
+import { Alert, InteractionManager } from "react-native";
 import { NavigationActions } from 'react-navigation';
-// import Toast from 'react-native-simple-toast';
+import Toast from 'react-native-simple-toast';
 
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import Config from 'kkbmobile/app/config/config';
@@ -15,8 +15,8 @@ export default class UtilService {
 
   showSpinner(message, opts = {}) {
     // this.spinnerTimer = setTimeout(() => {
-      AppStore.appState.loading = true;
-      AppStore.appState.loadingText = message;
+    AppStore.appState.loading = true;
+    AppStore.appState.loadingText = message;
     // }, 500);
   }
 
@@ -38,17 +38,28 @@ export default class UtilService {
 
   returnBack(fallbackScreen) {
     const backAction = this.storeService.getTemp('backAction');
-    if (backAction) return this.navigator.dispatch(backAction);
-    this.navigate(fallbackScreen);
+    if (backAction) return this.navAction(backAction);
+    this.nav(fallbackScreen);
   }
 
   handleLogin() {
-    this.navigate('Login');
+    this.nav('Login');
   }
 
-  navigate(screen) {
-    if (!this.navigator) return;
-    this.navigator.dispatch(NavigationActions.navigate({ routeName: screen }));
+  nav(screen, navigator = this.navigator) {
+    if (!navigator) return;
+    requestAnimationFrame(() => {
+      navigator.dispatch(NavigationActions.navigate({ routeName: screen }))
+    });
+  }
+
+  quickNav(screen, navigator = this.navigator) {
+    if (!navigator) return;
+    navigator.dispatch(NavigationActions.navigate({ routeName: screen }))
+  }
+
+  navAction(action, navigator = this.navigator) {
+    requestAnimationFrame(() => navigator.dispatch(action), 0);
   }
 
   alert(message, opts = {}) {
@@ -80,9 +91,9 @@ export default class UtilService {
   }
 
   toast(message, opts = {}) {
-    // setTimeout(() => {
-    //   Toast.show(message, opts.duration || Toast.SHORT);
-    // }, 0);
+    setTimeout(() => {
+      Toast.show(message, opts.duration || Toast.SHORT);
+    }, 100);
     // const colors = {
     //   danger: {
     //     backgroundColor: globalStyles.colors.$danger,

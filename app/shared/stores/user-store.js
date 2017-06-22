@@ -37,7 +37,7 @@ export default class UserStore extends Store {
   async onLogout(user) {
     const resp = await this.userService.logout();
     UserStore.userState.setUser(null);
-    this.utilService.navigate('Welcome');
+    this.utilService.nav('Welcome');
   }
 
   onSendCode(type, mobile) {

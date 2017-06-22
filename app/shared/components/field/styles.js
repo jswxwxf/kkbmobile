@@ -2,10 +2,14 @@ import { globalStyles } from 'kkbmobile/app/styles';
 
 export default {
   ...globalStyles,
+  inputContainer: {
+    backgroundColor: 'white'
+  },
   errorContainer: {
     alignItems: 'flex-end',
     marginRight: 15,
-    marginTop: 5
+    marginTop: 5,
+    marginBottom: 5
   },
   selectItem: {
     width: 200,
