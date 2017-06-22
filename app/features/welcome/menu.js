@@ -109,7 +109,7 @@ export default class Menu extends Component {
             {this.renderMenuItem('About', '关于开开保', require(`kkbmobile/app/assets/images/menu_about.png`))}
           </List>
         </Content>
-        <Spinner visible={AppStore.appState.loading} textContent={AppStore.appState.loadingText} overlayColor="rgba(0, 0, 0, 0)" textStyle={styles.spinnerText} />
+        <Spinner visible={AppStore.appState.loading} textContent={AppStore.appState.loadingText} overlayColor="rgba(0, 0, 0, 0.2)" textStyle={styles.spinnerText} />
       </Container>
     );
   }
