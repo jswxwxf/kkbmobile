@@ -1,6 +1,6 @@
 import { Alert, InteractionManager } from "react-native";
 import { NavigationActions } from 'react-navigation';
-import Toast from 'react-native-simple-toast';
+import { Toast } from 'teaset';
 
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import Config from 'kkbmobile/app/config/config';
@@ -91,9 +91,10 @@ export default class UtilService {
   }
 
   toast(message, opts = {}) {
-    setTimeout(() => {
-      Toast.show(message, opts.duration || Toast.SHORT);
-    }, 100);
+    Toast.message(message);
+    // setTimeout(() => {
+    //   Toast.show(message, opts.duration || Toast.SHORT);
+    // }, 100);
     // const colors = {
     //   danger: {
     //     backgroundColor: globalStyles.colors.$danger,
