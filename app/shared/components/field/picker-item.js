@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
   View,
   Modal,
-  TouchableOpacity,
-  TouchableWithoutFeedback
+  TouchableOpacity
 } from 'react-native';
 import {
   ListItem,
@@ -15,20 +14,37 @@ import {
   Text,
   Thumbnail
 } from 'native-base';
-import { reaction } from 'mobx';
-import { observer } from 'mobx-react';
 
-import { inject, TYPES } from 'kkbmobile/app/config/inject';
+import { Picker } from '../antd';
 
 import styles from './styles';
 
-@observer
+const Trigger = (props) => {
+  return (
+    <TouchableOpacity onPress={props.onClick}>
+      <View style={styles.pickerItem} onPress={props.onClick}>
+        <Text style={styles.valueText}>{props.placeholder}</Text>
+        <Thumbnail style={styles.selectIcon} resizeMode="contain" source={require('./images/select.png')} />
+      </View>
+    </TouchableOpacity>
+  );
+}
+
 export default class PickerItem extends Component {
 
-  utilService = inject(TYPES.utilService);
+  prepareData(items, emptyLabel) {
+    if (!_.isArray(items[0])) items = [items];
+    return this.transform(items, emptyLabel);
+  }
 
-  handleShowPicker = () => {
-  };
+  transform(items, emptyLabel) {
+    return items.map(item => {
+      if (_.isArray(item)) return this.transform(item, emptyLabel);
+      if (_.isObject(item)) return item;
+      if (_.isEmpty(item)) return { label: emptyLabel, value: item };
+      return { label: item, value: item };
+    });
+  }
 
   render() {
     const { label, labelStyle, placeholder, last, items, ...other } = this.props;
@@ -38,12 +54,14 @@ export default class PickerItem extends Component {
           <Text style={styles.label}>{label}</Text>
         </Body>
         <Right>
-          <TouchableOpacity onPress={this.handleShowPicker} style={styles.pickerItem}>
-            <Text>{placeholder}</Text>
-            <Thumbnail style={styles.selectIcon} resizeMode="contain" source={require('./images/select.png')} />
-          </TouchableOpacity>
+          <Picker
+            data={this.prepareData(items, placeholder)}
+            title={label}
+            cascade={false}>
+            <Trigger {...this.props} />
+          </Picker>
         </Right>
-      </ListItem>
+      </ListItem >
     )
   }
 

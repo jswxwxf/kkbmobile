@@ -15,7 +15,7 @@ export default {
     width: 200,
     borderWidth: 0
   },
-  selectItemText: {
+  valueText: {
     textAlign: 'right',
     fontSize: 16
   },

@@ -64,8 +64,8 @@ export default class Detail extends Component {
           <Tab heading={this.renderTab('家庭', require('./images/ico_home.png'))}>
             <Content style={styles.container}>
               <Form style={styles.list}>
-                <PickerItem label="婚姻状况" placeholder="请选择" items={['未婚', '已婚', '离异', '丧偶']} />
-                <DetailItem itemText="子女状况" itemValue="1男2女" last />
+                <SelectItem label="婚姻状况" placeholder="请选择" items={['未婚', '已婚', '离异', '丧偶']} />
+                <PickerItem label="子女状况" placeholder="请选择" items={[['', '1男', '2男'], ['', '1女', '2女']]} last />
               </Form>
             </Content>
           </Tab>

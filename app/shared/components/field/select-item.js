@@ -31,7 +31,7 @@ export default class SelectItem extends Component {
         <Right>
           <Select
             style={styles.selectItem}
-            valueStyle={styles.selectItemText}
+            valueStyle={styles.valueText}
             items={items}
             getItemValue={getItemValue}
             getItemText={getItemText}
