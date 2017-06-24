@@ -25,7 +25,16 @@ export default class Credit extends Component {
     return (
       <Container>
         <Content padder>
-          <Text>Credit</Text>
+          <View style={styles.creditContainer}>
+            <View style={styles.creditImageWrapper}>
+              <Image resizeMode='stretch' source={require('./images/upload_credit.png')} style={styles.creditImage} />
+              <Text style={styles.textCenter}>芝麻信用上传</Text>
+            </View>
+            <View style={styles.creditImageWrapper}>
+              <Image resizeMode='stretch' source={require('./images/sample_credit.png')} style={styles.creditImage} />
+              <Text style={styles.textCenter}>芝麻信用示意图</Text>
+            </View>
+          </View>
         </Content>
       </Container >
     );

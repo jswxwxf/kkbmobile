@@ -56,7 +56,8 @@ export const globalStyles = {
   label: {
     flex: 0,
     marginRight: 10,
-    color: '#575757'
+    color: '#575757',
+    fontSize: 16
   },
   marginHorizontal: {
     marginHorizontal: GAP
@@ -70,6 +71,9 @@ export const globalStyles = {
   },
   icon: {
     width: 23
+  },
+  textCenter: {
+    textAlign: 'center'
   },
   topBorder: {
     borderTopColor: BORDER,

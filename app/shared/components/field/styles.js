@@ -17,7 +17,7 @@ export default {
   },
   valueText: {
     textAlign: 'right',
-    fontSize: 16
+    fontSize: 14
   },
   selectIcon: {
     width: 15,

@@ -34,7 +34,7 @@ export default {
   CheckboxIconSize: platform === "ios" ? 21 : 14,
   CheckboxIconMarginTop: platform === "ios" ? undefined : 1,
   CheckboxFontSize: platform === "ios" ? 23 / 0.9 : 18,
-  DefaultFontSize: 17,
+  DefaultFontSize: 16,
   checkboxBgColor: "#039BE5",
   checkboxSize: 20,
   checkboxTickColor: "#fff",
@@ -172,7 +172,7 @@ export default {
   iconHeaderSize: platform === "ios" ? 33 : 24,
 
   // InputGroup
-  inputFontSize: 17,
+  inputFontSize: 16,
   inputBorderColor: "#D9D5DC",
   inputSuccessBorderColor: "#2b8339",
   inputErrorBorderColor: "#ed2f2f",

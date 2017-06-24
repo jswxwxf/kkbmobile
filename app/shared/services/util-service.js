@@ -57,8 +57,9 @@ export default class UtilService {
 
   nav(screen, navigator = this.navigator) {
     if (!navigator) return;
-    if (this.navigating) return;
+    if (this.navigating && screen == this.lastScreen) return;
     this.navigating = true;
+    this.lastScreen = screen;
     requestAnimationFrame(() => {
       navigator.dispatch(NavigationActions.navigate({ routeName: screen }));
     }, 0);

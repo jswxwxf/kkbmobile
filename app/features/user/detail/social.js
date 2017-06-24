@@ -29,7 +29,7 @@ const DetailItem = ({ navigation, itemText, itemValue, readonly, onPress, iconSo
         <Text>{itemText}</Text>
       </Body>
       <Right>
-        <Text>{itemValue}</Text>
+        <Text note>{itemValue}</Text>
         <Icon name="arrow-forward" style={style} />
       </Right>
     </ListItem>

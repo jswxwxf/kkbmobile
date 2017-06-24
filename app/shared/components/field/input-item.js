@@ -18,7 +18,7 @@ export default class InputItem extends Component {
     return (
       <View style={styles.inputContainer}>
         <Item fixedLabel last={last} error={state.hasError}>
-          <Label style={labelStyle}>{label}</Label>
+          <Label style={styles.label}>{label}</Label>
           <Input placeholder={placeholder} value={state.value} onChangeText={state.onChange} autoCapitalize="none" {...other} />
           {right}
         </Item>
