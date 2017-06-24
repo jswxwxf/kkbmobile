@@ -6,8 +6,11 @@ import {
 import {
   Container,
   Content,
-  Text
+  Text,
+  Form
 } from 'native-base';
+
+import { InputItem, SelectItem, PickerItem } from 'kkbmobile/app/shared/components';
 
 import styles from './styles';
 
@@ -24,8 +27,11 @@ export default class Home extends Component {
     const { navigation } = this.props;
     return (
       <Container>
-        <Content padder>
-          <Text>Home</Text>
+        <Content>
+          <Form style={styles.list}>
+            <SelectItem label="婚姻状况" placeholder="请选择" items={['未婚', '已婚', '离异', '丧偶']} />
+            <PickerItem label="子女状况" placeholder="请选择" items={[['', '1男', '2男'], ['', '1女', '2女']]} last />
+          </Form>
         </Content>
       </Container >
     );

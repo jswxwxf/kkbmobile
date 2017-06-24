@@ -6,10 +6,35 @@ import {
 import {
   Container,
   Content,
-  Text
+  Text,
+  Form,
+  ListItem,
+  Body,
+  Left,
+  Thumbnail,
+  Right,
+  Icon
 } from 'native-base';
 
 import styles from './styles';
+
+const DetailItem = ({ navigation, itemText, itemValue, readonly, onPress, iconSource, last }) => {
+  const style = readonly ? { color: 'transparent' } : null;
+  return (
+    <ListItem icon last={last} onPress={onPress}>
+      {iconSource && <Left>
+        <Thumbnail resizeMode="contain" style={styles.icon} source={iconSource} />
+      </Left>}
+      <Body>
+        <Text>{itemText}</Text>
+      </Body>
+      <Right>
+        <Text>{itemValue}</Text>
+        <Icon name="arrow-forward" style={style} />
+      </Right>
+    </ListItem>
+  );
+};
 
 export default class Social extends Component {
 
@@ -24,8 +49,12 @@ export default class Social extends Component {
     const { navigation } = this.props;
     return (
       <Container>
-        <Content padder>
-          <Text>Social</Text>
+        <Content>
+          <Form style={styles.list}>
+            <DetailItem itemText="微信" itemValue="已绑定" iconSource={require('kkbmobile/app/assets/images/ico_wechat.png')} readonly />
+            <DetailItem itemText="新浪微博" itemValue="未绑定" iconSource={require('kkbmobile/app/assets/images/ico_weibo.png')} readonly />
+            <DetailItem itemText="QQ" itemValue="未绑定" iconSource={require('kkbmobile/app/assets/images/ico_qq.png')} readonly last />
+          </Form>
         </Content>
       </Container >
     );
