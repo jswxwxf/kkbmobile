@@ -57,9 +57,12 @@ export default class UtilService {
 
   nav(screen, navigator = this.navigator) {
     if (!navigator) return;
+    if (this.navigating) return;
+    this.navigating = true;
     requestAnimationFrame(() => {
-      navigator.dispatch(NavigationActions.navigate({ routeName: screen }))
-    });
+      navigator.dispatch(NavigationActions.navigate({ routeName: screen }));
+    }, 0);
+    setTimeout(() => this.navigating = false, 500);
   }
 
   quickNav(screen, navigator = this.navigator) {
