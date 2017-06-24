@@ -26,7 +26,7 @@ export default class Travel extends Component {
     return (
       <Container>
         <Header navigation={navigation} title="行程" />
-        <Content padder>
+        <Content style={styles.background} padder>
           <Text>驾驶评分页</Text>
         </Content>
       </Container >
