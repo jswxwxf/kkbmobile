@@ -18,7 +18,11 @@ export const DetailNavigator = TabNavigator(
     Social: { screen: Social },
   },
   {
+    navigationOptions: ({ navigation }) => ({
+      title: '补充信息'
+    }),
     tabBarPosition: 'top',
+    backBehavior: 'none',
     tabBarOptions: {
       showIcon: true,
       activeTintColor: 'black',
