@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   View,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import {
   Container,
@@ -16,6 +17,7 @@ import {
   Icon,
 
 } from 'native-base';
+import ImagePicker from 'react-native-image-picker';
 
 import { Divider } from 'kkbmobile/app/shared/components';
 
@@ -30,6 +32,10 @@ export default class Drive extends Component {
     ),
   };
 
+  handleImageSelection = () => {
+
+  }
+
   render() {
     const { navigation } = this.props;
     return (
@@ -37,7 +43,9 @@ export default class Drive extends Component {
         <Content padder>
           <View style={styles.driveContainer}>
             <View style={styles.driveImageWrapper}>
-              <Image resizeMode='contain' source={require('./images/upload_drive.png')} style={styles.driveImage} />
+              <TouchableOpacity onPress={this.handleImageSelection}>
+                <Image resizeMode='contain' source={require('./images/upload_drive.png')} style={styles.driveImage} />
+              </TouchableOpacity>
             </View>
             <Text style={styles.textCenter}>驾照上传</Text>
             <View style={styles.driveImageWrapper}>
