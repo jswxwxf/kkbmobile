@@ -14,8 +14,7 @@ export default {
     flexDirection: 'column'
   },
   tabIcon: {
-    height: 23,
-    top: -3
+    height: 26,
   },
   tabText: {
     fontSize: Platform.OS == 'ios' ? 12 : 14,
