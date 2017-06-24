@@ -7,7 +7,7 @@ import Device from './device/device';
 import Car from './car/car';
 import About from './about/about';
 import Travel from './travel/travel';
-import Detail from './detail/detail';
+import { DetailNavigator } from './detail';
 
 const UserNavigator = StackNavigator(
   {
@@ -17,7 +17,7 @@ const UserNavigator = StackNavigator(
     Device: { screen: Device },
     Car: { screen: Car },
     About: { screen: About },
-    Detail: { screen: Detail },
+    Detail: { screen: DetailNavigator },
   }
 );
 
