@@ -29,5 +29,10 @@ export default {
     width: 200,
     alignItems: 'center',
     justifyContent: 'flex-end'
+  },
+  pickerItemInner: {
+    fontSize: 17,
+    fontWeight: '400',
+    marginVertical: 5
   }
 };

@@ -57,7 +57,8 @@ export default class PickerItem extends Component {
           <Picker
             data={this.prepareData(items, placeholder)}
             title={label}
-            cascade={false}>
+            cascade={false}
+            itemStyle={styles.pickerItemInner}>
             <Trigger {...this.props} />
           </Picker>
         </Right>
