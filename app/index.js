@@ -6,7 +6,7 @@ import 'kkbmobile/app/config/config';
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import { withTheme, withAlert } from 'kkbmobile/app/shared/components';
 
-import { Menu, Welcome, Login, Register, Forget } from './features/welcome';
+import { Menu, WelcomeNavigator, Login, Register, Forget } from './features/welcome';
 import { UserNavigator, Travel } from './features/user';
 import { OrderNavigator } from './features/order';
 import { InsuranceNavigator } from './features/insurance';
@@ -17,7 +17,7 @@ import { InsuranceNavigator } from './features/insurance';
 
 const AppNavigator = DrawerNavigator(
   {
-    Welcome: { screen: Welcome },
+    WelcomeHome: { screen: WelcomeNavigator },
     Login: { screen: Login },
     Register: { screen: Register },
     ForgetPassword: { screen: Forget },

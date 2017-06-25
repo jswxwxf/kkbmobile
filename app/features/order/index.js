@@ -8,5 +8,6 @@ const OrderNavigator = StackNavigator(
   }
 );
 
+export { Basic } from './inquiry';
 export { OrderNavigator };
 
