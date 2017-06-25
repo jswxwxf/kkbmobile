@@ -1,6 +1,7 @@
 import { Alert, InteractionManager } from "react-native";
 import { NavigationActions } from 'react-navigation';
 import { Toast } from 'teaset';
+import ImagePicker from 'react-native-image-picker';
 
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
 import Config from 'kkbmobile/app/config/config';
@@ -101,6 +102,40 @@ export default class UtilService {
         }
       )
     });
+  }
+
+  pickImage(title, opts = {}) {
+
+    opts = {
+      title,
+      cancelButtonTitle: '取消',
+      takePhotoButtonTitle: '拍摄...',
+      chooseFromLibraryButtonTitle: '从手机相册选择...',
+      permissionDenied: {
+        title: '权限被拒绝',
+        text: '你需要通过权限才能获取图片.',
+        reTryTitle: '重试',
+        okTitle: '我确定'
+      },
+      storageOptions: {
+        skipBackup: true,
+        path: 'images'
+      },
+      ...opts
+    }
+
+    return new Promise((resolve, reject) => {
+      ImagePicker.showImagePicker(opts, (resp) => {
+        if (resp.didCancel) {
+          return reject(resp);
+        }
+        if (resp.error) {
+          return reject(resp);
+        }
+        resolve(resp);
+      });
+    });
+
   }
 
   toast(message, opts = {}) {

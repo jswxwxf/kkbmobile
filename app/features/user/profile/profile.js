@@ -17,7 +17,7 @@ import {
 } from 'native-base';
 
 import { inject, TYPES } from 'kkbmobile/app/config/inject';
-import { Header, Divider } from 'kkbmobile/app/shared/components';
+import { Header, Divider, ImageItem } from 'kkbmobile/app/shared/components';
 
 import styles from './profile-styles';
 
@@ -41,15 +41,17 @@ const ProfileItem = ({ navigation, itemText, itemValue, readonly, onPress, iconS
 
 const AvatarItem = () => {
   return (
-    <ListItem icon last style={styles.avatarWrapper}>
-      <Body>
-        <Text>头像</Text>
-      </Body>
-      <Right style={styles.avatarWrapper}>
-        <Thumbnail resizeMode="contain" source={require('kkbmobile/app/assets/images/default_avatar.png')} />
-        <Icon name="arrow-forward" />
-      </Right>
-    </ListItem>
+    <ImageItem label="请选取头像">
+      <ListItem icon last style={styles.avatarWrapper}>
+        <Body>
+          <Text>头像</Text>
+        </Body>
+        <Right style={styles.avatarWrapper}>
+          <Thumbnail resizeMode="contain" source={require('kkbmobile/app/assets/images/default_avatar.png')} />
+          <Icon name="arrow-forward" />
+        </Right>
+      </ListItem>
+    </ImageItem>
   )
 };
 
